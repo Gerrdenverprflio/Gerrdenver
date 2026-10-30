@@ -3,30 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gerr Denver Teodoro — IT Operations, Security Assessment & AI Automation</title>
-<meta name="description" content="IT Operations Support, POS Specialist, Web App Security Assessor, and AI Automation Builder based in San Jose Del Monte, Bulacan, Philippines.">
+<title>Gerr Denver Teodoro | IT, Automation and Security</title>
+<meta name="description" content="Technical Engineer in the Philippines who finds manual work in a business and builds tools to fix it, with AI. Store IT, automation, and web app security.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* Kingfisher palette: deep wing, turquoise, collar white, orange belly, branch */
   :root{
-    --bg:#0A0E13;
-    --bg-alt:#0D131A;
-    --panel:#121922;
-    --panel-hover:#161F29;
-    --border:#1E2933;
-    --border-bright:#2C3B47;
-    --text:#E7EDF3;
-    --text-muted:#8B98A8;
-    --text-dim:#57646F;
-    --green:#35D68C;
-    --green-dim:#1D5E45;
-    --amber:#F2A93B;
-    --amber-dim:#6B4E1D;
+    --wing:#0F4C6B;
+    --wing-deep:#0A3349;
+    --wing-line:#3E7896;
+    --turquoise:#2A9DB5;
+    --link:#1B6A8C;
+    --collar:#F4F6F4;
+    --white:#FFFFFF;
+    --branch:#3B2F2A;
+    --branch-soft:#5E504A;
+    --line:#D3E3E8;
+    --orange:#D9732B;
+    --orange-hover:#E5853F;
+    --orange-ink:#2A1A10;
+    --orange-text:#A9531B;
+    --on-wing:#F4F6F4;
+    --on-wing-soft:#CFE6EE;
+    --on-wing-dim:#A9CFDC;
     --radius:10px;
     --maxw:1120px;
-    --font-display:'Space Grotesk',sans-serif;
-    --font-body:'Inter',sans-serif;
+    --font-display:'Bricolage Grotesque',sans-serif;
+    --font-body:'IBM Plex Sans',sans-serif;
     --font-mono:'IBM Plex Mono',monospace;
   }
 
@@ -34,377 +39,275 @@
   html{scroll-behavior:smooth;}
   body{
     margin:0;
-    background:var(--bg);
-    color:var(--text);
+    background:var(--collar);
+    color:var(--branch);
     font-family:var(--font-body);
+    font-size:16px;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
-  img{max-width:100%;display:block;}
-  a{color:inherit;text-decoration:none;}
-  ul{margin:0;padding:0;list-style:none;}
-  h1,h2,h3{font-family:var(--font-display);margin:0;letter-spacing:-0.01em;}
+  img{max-width:100%;height:auto;display:block;}
+  a{color:var(--link);}
+  ul,ol{margin:0;padding:0;list-style:none;}
+  h1,h2,h3{font-family:var(--font-display);margin:0;letter-spacing:-0.015em;font-weight:700;}
   p{margin:0;}
-  section{scroll-margin-top:84px;}
+  section{scroll-margin-top:76px;}
 
-  :focus-visible{
-    outline:2px solid var(--green);
-    outline-offset:3px;
-    border-radius:4px;
-  }
+  :focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px;}
 
   @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+    *{transition-duration:0.001ms !important;scroll-behavior:auto !important;}
   }
 
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
-  .eyebrow{
-    font-family:var(--font-mono);
-    font-size:12px;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--amber);
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-  }
-  .section-head{margin-bottom:44px;max-width:640px;}
-  .section-head h2{font-size:clamp(24px,3vw,32px);margin:14px 0 12px;font-weight:600;}
-  .section-head p{color:var(--text-muted);font-size:15.5px;}
   .section-pad{padding:clamp(56px,8vw,96px) 0;}
-  .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border) 20%,var(--border) 80%,transparent);}
+  .section-head{max-width:680px;margin-bottom:40px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,38px);line-height:1.12;margin-bottom:14px;}
+  .section-head p{color:var(--branch-soft);font-size:17px;}
 
-  /* ---------- status dot ---------- */
-  .dot{
-    width:8px;height:8px;border-radius:50%;
-    background:var(--green);
-    box-shadow:0 0 0 0 rgba(53,214,140,0.6);
-    animation:pulse 2.2s infinite;
-    flex-shrink:0;
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;min-height:44px;
+    font-family:var(--font-body);font-weight:600;font-size:15px;
+    padding:11px 20px;border-radius:8px;text-decoration:none;
+    border:1.5px solid transparent;cursor:pointer;white-space:nowrap;
+    transition:background .15s ease, border-color .15s ease;
   }
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(53,214,140,0.55);}
-    70%{box-shadow:0 0 0 7px rgba(53,214,140,0);}
-    100%{box-shadow:0 0 0 0 rgba(53,214,140,0);}
+  .btn svg{width:18px;height:18px;flex-shrink:0;}
+  .btn--primary{background:var(--orange);color:var(--orange-ink);}
+  .btn--primary:hover{background:var(--orange-hover);}
+  .btn--on-wing{background:transparent;color:var(--on-wing);border-color:var(--wing-line);}
+  .btn--on-wing:hover{border-color:var(--on-wing-soft);}
+  .btn--plain{background:var(--white);color:var(--branch);border-color:var(--line);}
+  .btn--plain:hover{border-color:var(--link);}
+
+  /* ---------- status chips ---------- */
+  .chip{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:13px;font-weight:600;line-height:1;
+    padding:6px 11px;border-radius:999px;white-space:nowrap;
   }
+  .chip::before{content:'';width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+  .chip--use{background:var(--orange);color:var(--orange-ink);}
+  .chip--use::before{background:var(--orange-ink);}
+  .chip--progress{border:1.5px solid var(--orange);color:var(--orange-text);background:var(--white);}
+  .chip--progress::before{border:1.5px solid var(--orange);}
+  .chip--tested{border:1.5px solid var(--link);color:var(--link);background:var(--white);}
+  .chip--tested::before{background:var(--link);}
+  .chip--idea{border:1.5px dashed var(--branch-soft);color:var(--branch-soft);background:var(--white);}
+  .chip--idea::before{display:none;}
+
+  .stack{display:flex;flex-wrap:wrap;gap:6px;}
+  .stack span{font-size:13px;color:var(--branch-soft);border:1px solid var(--line);border-radius:6px;padding:3px 9px;background:var(--white);}
 
   /* ---------- topbar ---------- */
   .topbar{
     position:sticky;top:0;z-index:50;
-    background:rgba(10,14,19,0.86);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border);
+    background:rgba(244,246,244,0.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
   }
   .topbar__inner{
-    max-width:var(--maxw);margin:0 auto;padding:14px 24px;
+    max-width:var(--maxw);margin:0 auto;padding:12px 24px;
     display:flex;align-items:center;justify-content:space-between;gap:16px;
   }
-  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:16px;flex-shrink:0;white-space:nowrap;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--branch);text-decoration:none;white-space:nowrap;}
   .brand__mark{
-    width:32px;height:32px;border-radius:8px;
-    background:var(--panel);border:1px solid var(--border-bright);
-    display:flex;align-items:center;justify-content:center;
-    font-family:var(--font-mono);font-size:13px;color:var(--green);
-    flex-shrink:0;
+    width:34px;height:34px;border-radius:8px;background:var(--wing);color:var(--on-wing);
+    display:flex;align-items:center;justify-content:center;font-size:14px;
   }
-  .status-pill{
-    display:flex;align-items:center;gap:8px;
-    font-family:var(--font-mono);font-size:11.5px;color:var(--text-muted);
-    border:1px solid var(--border);border-radius:100px;
-    padding:6px 12px;flex-shrink:0;white-space:nowrap;
-  }
-  .nav{display:flex;align-items:center;gap:18px;flex-shrink:1;min-width:0;}
-  .nav a{
-    font-size:13.5px;color:var(--text-muted);font-weight:500;
-    transition:color .15s ease;white-space:nowrap;
-  }
-  .nav a:hover{color:var(--text);}
+  .nav{display:flex;align-items:center;gap:22px;}
+  .nav a{font-size:15px;color:var(--branch-soft);font-weight:500;text-decoration:none;white-space:nowrap;}
+  .nav a:hover{color:var(--branch);}
   .nav-toggle{
-    display:none;background:none;border:1px solid var(--border);
-    border-radius:8px;width:38px;height:38px;color:var(--text);
-    cursor:pointer;align-items:center;justify-content:center;flex-shrink:0;
+    display:none;background:var(--white);border:1px solid var(--line);
+    border-radius:8px;width:44px;height:44px;color:var(--branch);
+    cursor:pointer;align-items:center;justify-content:center;
   }
-  .topbar__right{display:flex;align-items:center;gap:16px;flex-shrink:0;}
-
-  @media (max-width:1180px){
+  @media (max-width:960px){
     .nav{
-      position:absolute;top:100%;left:0;right:0;
-      background:var(--bg);border-bottom:1px solid var(--border);
-      flex-direction:column;align-items:flex-start;gap:0;
-      padding:8px 24px 18px;
-      display:none;
+      position:absolute;top:100%;left:0;right:0;background:var(--collar);
+      border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;
+      gap:0;padding:6px 24px 16px;display:none;
     }
     .nav.open{display:flex;}
-    .nav a{padding:10px 0;width:100%;border-bottom:1px solid var(--border);white-space:normal;}
-    .status-pill{display:none;}
+    .nav a{padding:12px 0;border-bottom:1px solid var(--line);}
     .nav-toggle{display:flex;}
   }
 
-  /* ---------- buttons ---------- */
-  .btn{
-    display:inline-flex;align-items:center;gap:9px;
-    font-family:var(--font-body);font-weight:600;font-size:14.5px;
-    padding:12px 20px;border-radius:8px;
-    border:1px solid transparent;cursor:pointer;
-    transition:transform .15s ease, background .15s ease, border-color .15s ease;
-    white-space:nowrap;
-  }
-  .btn:hover{transform:translateY(-1px);}
-  .btn--primary{background:var(--green);color:#06140D;}
-  .btn--primary:hover{background:#4EE3A2;}
-  .btn--ghost{background:var(--panel);border-color:var(--border-bright);color:var(--text);}
-  .btn--ghost:hover{background:var(--panel-hover);border-color:var(--green);}
-  .btn svg{width:17px;height:17px;flex-shrink:0;}
-
   /* ---------- hero ---------- */
-  .hero{padding:clamp(48px,7vw,88px) 0 clamp(56px,8vw,96px);}
-  .hero-grid{
-    display:flex;flex-direction:column;gap:36px;
-  }
-  .hero h1{
-    font-size:clamp(30px,3.6vw,46px);
-    font-weight:600;line-height:1.12;margin:18px 0 20px;
-  }
-  .hero h1 em{font-style:normal;color:var(--green);}
-  .hero__sub{color:var(--text-muted);font-size:17px;max-width:620px;margin-bottom:28px;}
-  .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px;}
-  .hero__meta{
-    display:flex;flex-wrap:wrap;gap:18px;
-    font-family:var(--font-mono);font-size:13px;color:var(--text-dim);
-  }
-  .hero__meta span{display:flex;align-items:center;gap:6px;}
-  .hero-panel{display:flex;justify-content:center;}
-  .hero-panel .console{max-width:640px;width:100%;}
+  .hero{background:var(--wing);color:var(--on-wing);padding:clamp(48px,7vw,88px) 0;}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:56px;align-items:start;}
+  .hero__open{font-size:15px;color:var(--on-wing-soft);margin-bottom:18px;display:flex;align-items:center;gap:9px;}
+  .hero__open::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--orange);}
+  .hero h1{font-size:clamp(36px,5vw,60px);line-height:1.04;margin-bottom:22px;}
+  .hero__sub{font-size:18px;color:var(--on-wing-soft);max-width:600px;margin-bottom:28px;}
+  .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px;}
+  .proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;border-top:1px solid var(--wing-line);padding-top:24px;}
+  .proof b{display:block;font-family:var(--font-display);font-size:clamp(34px,4vw,46px);line-height:1;margin-bottom:8px;}
+  .proof span{font-size:14px;color:var(--on-wing-soft);line-height:1.45;display:block;}
 
-  /* console card */
-  .console{
-    background:var(--panel);border:1px solid var(--border-bright);
-    border-radius:12px;overflow:hidden;
+  .status{background:var(--collar);color:var(--branch);border-radius:14px;overflow:hidden;}
+  .status__head{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:var(--wing-deep);color:var(--on-wing-dim);font-family:var(--font-mono);font-size:13px;}
+  .status__body{padding:6px 20px 14px;}
+  .status__row{padding:14px 0;border-bottom:1px solid var(--line);}
+  .status__row:last-child{border-bottom:none;}
+  .status__label{display:block;font-size:13px;color:var(--branch-soft);margin-bottom:4px;}
+  .status__value{font-family:var(--font-mono);font-size:16px;font-weight:500;}
+  .status__list{display:flex;flex-direction:column;gap:8px;margin-top:6px;font-size:15px;}
+  .status__list li{display:flex;justify-content:space-between;gap:12px;align-items:center;}
+  @media (max-width:880px){
+    .hero-grid{grid-template-columns:minmax(0,1fr);gap:40px;}
   }
-  .console__head{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:12px 16px;border-bottom:1px solid var(--border);
-    font-family:var(--font-mono);font-size:11.5px;color:var(--text-dim);
-    letter-spacing:0.06em;
+  @media (max-width:520px){
+    .proof{grid-template-columns:1fr;gap:16px;}
+    .proof div{display:flex;align-items:baseline;gap:14px;}
+    .proof b{margin-bottom:0;min-width:96px;}
   }
-  .console__head .dot{width:6px;height:6px;}
-  .console__body{padding:20px 24px;}
-  .console__row{
-    display:flex;flex-direction:column;gap:6px;align-items:flex-start;
-    padding:13px 0;border-bottom:1px solid var(--border);
-    font-size:13.5px;
-  }
-  .console__row:last-child{border-bottom:none;}
-  .console__label{color:var(--text-dim);font-family:var(--font-mono);font-size:11px;letter-spacing:0.05em;text-transform:uppercase;}
-  .console__value{font-family:var(--font-mono);color:var(--text);font-weight:500;font-size:14.5px;}
-  .console__value.green{color:var(--green);}
-  .tag-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;width:100%;}
-  .tag{
-    font-family:var(--font-mono);font-size:11px;padding:4px 9px;
-    border-radius:100px;background:rgba(53,214,140,0.08);
-    color:var(--green);border:1px solid var(--green-dim);
-  }
-  .console__ticker{
-    border-top:1px solid var(--border);
-    padding:10px 16px;overflow:hidden;position:relative;
-    background:var(--bg-alt);
-  }
-  .console__ticker-track{
-    display:flex;gap:36px;white-space:nowrap;
-    font-family:var(--font-mono);font-size:12px;color:var(--text-dim);
-    animation:ticker 22s linear infinite;
-  }
-  @keyframes ticker{
-    from{transform:translateX(0);}
-    to{transform:translateX(-50%);}
-  }
-  .console__ticker-track span{color:var(--green);}
 
   /* ---------- about ---------- */
-  .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start;}
-  .about-grid p{color:var(--text-muted);margin-bottom:16px;font-size:15.5px;}
-  .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  .stat{
-    background:var(--panel);border:1px solid var(--border);border-radius:10px;
-    padding:18px 16px;
-  }
-  .stat b{display:block;font-family:var(--font-display);font-size:24px;color:var(--green);margin-bottom:4px;}
-  .stat span{font-size:12.5px;color:var(--text-muted);}
-  @media (max-width:880px){.about-grid{grid-template-columns:1fr;}}
+  .about-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);gap:56px;align-items:start;}
+  .about-grid h2{font-size:clamp(28px,3.4vw,38px);line-height:1.12;margin-bottom:20px;}
+  .about-copy p{font-size:17px;color:var(--branch-soft);margin-bottom:16px;max-width:62ch;}
+  .about-copy p strong{color:var(--branch);font-weight:600;}
+  .path{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px;}
+  .path h3{font-size:20px;margin-bottom:18px;}
+  .path ol{position:relative;padding-left:22px;}
+  .path ol::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--line);}
+  .path li{position:relative;padding-bottom:20px;}
+  .path li:last-child{padding-bottom:0;}
+  .path li::before{content:'';position:absolute;left:-22px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--white);border:2px solid var(--turquoise);}
+  .path li.now::before{background:var(--orange);border-color:var(--orange);}
+  .path b{display:block;font-size:16px;}
+  .path span{display:block;font-size:14px;color:var(--branch-soft);}
+  @media (max-width:880px){.about-grid{grid-template-columns:minmax(0,1fr);gap:36px;}}
 
-  /* ---------- services / skills cards ---------- */
-  .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
-  .svc-card{
-    background:var(--panel);border:1px solid var(--border);border-radius:12px;
-    padding:22px;transition:border-color .15s ease, transform .15s ease;
-  }
-  .svc-card:hover{border-color:var(--border-bright);transform:translateY(-2px);}
-  .svc-card__icon{
-    width:38px;height:38px;border-radius:9px;background:rgba(242,169,59,0.09);
-    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
-    color:var(--amber);
-  }
-  .svc-card__icon svg{width:19px;height:19px;}
-  .svc-card h3{font-size:16.5px;font-weight:600;margin-bottom:8px;}
-  .svc-card p{color:var(--text-muted);font-size:14px;}
-  .svc-card--new{border-color:var(--green-dim);}
-  .svc-card--new .svc-card__icon{background:rgba(53,214,140,0.1);color:var(--green);}
-
-  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
-  .skill-block{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 22px;}
-  .skill-block h3{font-family:var(--font-mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber);margin-bottom:12px;}
-  .skill-block p{color:var(--text-muted);font-size:14px;line-height:1.7;}
-
-  /* ---------- competency chips ---------- */
-  .chip-row{display:flex;flex-wrap:wrap;gap:9px;}
-  .chip{
-    font-family:var(--font-mono);font-size:12.5px;color:var(--text-muted);
-    border:1px solid var(--border);border-radius:100px;padding:7px 14px;
+  /* ---------- how I work ---------- */
+  .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border-top:2px solid var(--branch);}
+  .steps li{padding:20px 18px 0 0;}
+  .steps__n{font-family:var(--font-display);font-size:40px;line-height:1;color:var(--turquoise);margin-bottom:12px;display:block;}
+  .steps h3{font-size:19px;margin-bottom:8px;}
+  .steps p{font-size:15px;color:var(--branch-soft);}
+  @media (max-width:880px){
+    .steps{grid-template-columns:1fr;border-top:none;}
+    .steps li{display:grid;grid-template-columns:56px minmax(0,1fr);padding:18px 0;border-top:1px solid var(--line);}
+    .steps__n{font-size:32px;grid-row:span 2;}
   }
 
-  /* ---------- experience timeline ---------- */
-  .timeline{border-left:1px solid var(--border);margin-left:6px;}
-  .tl-item{position:relative;padding:0 0 40px 32px;}
-  .tl-item:last-child{padding-bottom:0;}
-  .tl-item::before{
-    content:'';position:absolute;left:-5.5px;top:4px;
-    width:10px;height:10px;border-radius:50%;
-    background:var(--bg);border:2px solid var(--green);
-  }
-  .tl-item__date{font-family:var(--font-mono);font-size:12px;color:var(--text-dim);margin-bottom:6px;display:block;}
-  .tl-item__tag{
-    font-family:var(--font-mono);font-size:11px;color:var(--amber);
-    text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:10px;
-  }
-  .tl-item h3{font-size:19px;font-weight:600;margin-bottom:12px;}
-  .tl-item ul{display:flex;flex-direction:column;gap:8px;}
-  .tl-item li{
-    color:var(--text-muted);font-size:14.5px;padding-left:18px;position:relative;
-  }
-  .tl-item li::before{
-    content:'—';position:absolute;left:0;color:var(--text-dim);
-  }
+  /* ---------- featured projects ---------- */
+  .featured{background:var(--wing-deep);color:var(--on-wing);}
+  .featured .section-head p{color:var(--on-wing-soft);}
+  .note{font-size:14px;color:var(--on-wing-dim);margin-top:10px;}
+  .feature{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;padding:40px 0;border-top:1px solid var(--wing-line);}
+  .feature img{border-radius:12px;border:1px solid var(--wing-line);}
+  .feature h3{font-size:clamp(26px,3vw,34px);line-height:1.1;margin:16px 0 14px;}
+  .feature p{color:var(--on-wing-soft);font-size:16px;margin-bottom:12px;}
+  .feature p b{color:var(--on-wing);font-weight:600;}
+  .feature .stack span{background:transparent;border-color:var(--wing-line);color:var(--on-wing-soft);}
+  .feature .stack{margin-top:18px;}
+  @media (max-width:880px){.feature{grid-template-columns:minmax(0,1fr);gap:22px;}}
 
-  /* ---------- projects ---------- */
-  .filter-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+  /* ---------- project log ---------- */
+  .filter-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
   .filter-btn{
-    font-family:var(--font-mono);font-size:12.5px;padding:8px 15px;
-    border-radius:100px;border:1px solid var(--border);background:transparent;
-    color:var(--text-muted);cursor:pointer;transition:all .15s ease;
+    font-family:var(--font-body);font-size:15px;font-weight:500;min-height:44px;
+    padding:8px 16px;border-radius:999px;border:1px solid var(--line);
+    background:var(--white);color:var(--branch);cursor:pointer;
   }
-  .filter-btn:hover{border-color:var(--border-bright);color:var(--text);}
-  .filter-btn.active{background:var(--green);border-color:var(--green);color:#06140D;}
+  .filter-btn:hover{border-color:var(--link);}
+  .filter-btn[aria-pressed="true"]{background:var(--branch);border-color:var(--branch);color:var(--collar);}
 
-  .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;}
-  .proj-card{
-    background:var(--panel);border:1px solid var(--border);border-radius:12px;
-    padding:22px;display:flex;flex-direction:column;gap:14px;
-    transition:border-color .15s ease;
-  }
-  .proj-card:hover{border-color:var(--border-bright);}
-  .proj-card.hidden{display:none;}
-  .proj-card__top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
-  .proj-id{font-family:var(--font-mono);font-size:11.5px;color:var(--text-dim);}
-  .status-tag{
-    font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.04em;
-    padding:3px 9px;border-radius:100px;text-transform:uppercase;
-  }
-  .status-tag.active{background:rgba(242,169,59,0.1);color:var(--amber);border:1px solid var(--amber-dim);}
-  .status-tag.deployed{background:rgba(53,214,140,0.1);color:var(--green);border:1px solid var(--green-dim);}
-  .proj-card__cat{font-family:var(--font-mono);font-size:10.5px;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.05em;}
-  .proj-card h3{font-size:17px;font-weight:600;}
-  .proj-card p{color:var(--text-muted);font-size:14px;}
-  .stack-row{display:flex;flex-wrap:wrap;gap:6px;}
-  .stack-tag{
-    font-family:var(--font-mono);font-size:10.5px;color:var(--text-dim);
-    border:1px solid var(--border);border-radius:6px;padding:3px 8px;
-  }
-  .proj-value{
-    font-size:13px;color:var(--text-muted);border-top:1px solid var(--border);
-    padding-top:12px;
-  }
-  .proj-value b{color:var(--text);font-weight:600;}
+  .log{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:20px;}
+  .entry{background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;}
+  .entry[hidden]{display:none;}
+  .entry img{border-bottom:1px solid var(--line);}
+  .entry__body{padding:20px;display:flex;flex-direction:column;gap:12px;flex:1;}
+  .entry__top{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .entry__id{font-family:var(--font-mono);font-size:13px;color:var(--branch-soft);}
+  .entry h3{font-size:20px;line-height:1.2;}
+  .entry p{font-size:15px;color:var(--branch-soft);}
+  .entry .stack{margin-top:auto;}
+  .log-note{font-size:14px;color:var(--branch-soft);margin-top:20px;}
+
+  /* ---------- help / skills ---------- */
+  .help{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+  .help div{background:var(--white);padding:22px;}
+  .help h3{font-size:18px;margin-bottom:8px;}
+  .help p{font-size:15px;color:var(--branch-soft);}
+
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px 40px;}
+  .skills h3{font-size:18px;margin-bottom:8px;padding-bottom:8px;border-bottom:2px solid var(--turquoise);}
+  .skills p{font-size:15px;color:var(--branch-soft);line-height:1.7;}
+
+  /* ---------- experience ---------- */
+  .job{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;padding:32px 0;border-top:1px solid var(--line);}
+  .job:first-of-type{border-top:2px solid var(--branch);}
+  .job__when{font-size:15px;color:var(--branch-soft);}
+  .job h3{font-size:24px;margin-bottom:4px;}
+  .job__org{font-size:16px;color:var(--branch-soft);margin-bottom:18px;display:block;}
+  .job h4{font-family:var(--font-body);font-size:16px;font-weight:600;margin:20px 0 10px;}
+  .job h4 span{font-weight:400;color:var(--branch-soft);}
+  .job ul{display:flex;flex-direction:column;gap:8px;}
+  .job li{font-size:15.5px;color:var(--branch-soft);padding-left:18px;position:relative;}
+  .job li::before{content:'';position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:50%;background:var(--turquoise);}
+  @media (max-width:760px){.job{grid-template-columns:1fr;gap:10px;}}
 
   /* ---------- credentials ---------- */
-  .cred-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
-  .cred-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px;}
-  .cred-card h3{font-family:var(--font-mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
-  .cred-card .deg{margin-bottom:14px;}
-  .cred-card .deg b{display:block;font-size:14.5px;margin-bottom:2px;}
-  .cred-card .deg span{font-size:13px;color:var(--text-dim);}
-  .cred-card ul{display:flex;flex-direction:column;gap:8px;}
-  .cred-card li{font-size:13.5px;color:var(--text-muted);padding-left:16px;position:relative;}
-  .cred-card li::before{content:'—';position:absolute;left:0;color:var(--text-dim);}
-  @media (max-width:880px){.cred-grid{grid-template-columns:1fr;}}
+  .creds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+  .cred{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:22px;}
+  .cred h3{font-size:18px;margin-bottom:14px;}
+  .cred .deg{margin-bottom:12px;}
+  .cred .deg b{display:block;font-size:15.5px;}
+  .cred .deg span{font-size:14px;color:var(--branch-soft);}
+  .cred ul{display:flex;flex-direction:column;gap:7px;}
+  .cred li{font-size:15px;color:var(--branch-soft);}
+  @media (max-width:880px){.creds{grid-template-columns:1fr;}}
 
-  /* ---------- testimonials ---------- */
-  .testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-  .testi-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:24px;}
-  .testi-card .stars{color:var(--amber);font-size:14px;margin-bottom:14px;letter-spacing:2px;}
-  .testi-card p{font-size:14.5px;color:var(--text-muted);font-style:italic;margin-bottom:16px;}
-  .testi-card b{display:block;font-size:14px;}
-  .testi-card span{font-size:12.5px;color:var(--text-dim);}
-  @media (max-width:880px){.testi-grid{grid-template-columns:1fr;}}
+  /* ---------- reviews ---------- */
+  .reviews{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px;max-width:760px;}
+  .reviews h3{font-size:22px;margin-bottom:10px;}
+  .reviews p{font-size:16px;color:var(--branch-soft);margin-bottom:20px;}
+  .btn-row{display:flex;flex-wrap:wrap;gap:12px;}
 
   /* ---------- contact ---------- */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:36px;}
+  .contact{background:var(--wing);color:var(--on-wing);}
+  .contact .section-head p{color:var(--on-wing-soft);}
+  .contact-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:36px;}
   .contact-card{
-    background:var(--panel);border:1px solid var(--border-bright);border-radius:12px;
-    padding:22px;display:flex;align-items:center;gap:16px;
-    transition:border-color .15s ease, transform .15s ease;
+    display:flex;flex-direction:column;gap:4px;padding:20px;border-radius:12px;
+    background:var(--wing-deep);border:1px solid var(--wing-line);color:var(--on-wing);text-decoration:none;
   }
-  .contact-card:hover{border-color:var(--green);transform:translateY(-2px);}
-  .contact-card__icon{
-    width:44px;height:44px;border-radius:10px;background:var(--bg-alt);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green);
-  }
-  .contact-card__icon svg{width:21px;height:21px;}
-  .contact-card__body b{display:block;font-size:15px;margin-bottom:3px;}
-  .contact-card__body span{font-size:13px;color:var(--text-muted);font-family:var(--font-mono);}
-  .contact-card__go{margin-left:auto;color:var(--text-dim);font-size:18px;}
+  .contact-card:hover{border-color:var(--orange);}
+  .contact-card b{font-size:17px;}
+  .contact-card span{font-size:14px;color:var(--on-wing-soft);word-break:break-word;}
+  .ask h3{font-size:20px;margin-bottom:12px;}
+  .ask ul{display:flex;flex-direction:column;gap:8px;}
+  .ask li{font-size:16px;color:var(--on-wing-soft);padding-left:20px;position:relative;}
+  .ask li::before{content:'';position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:2px;border:1.5px solid var(--orange);}
+  @media (max-width:880px){.contact-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:520px){.contact-grid{grid-template-columns:1fr;}}
 
-  .checklist{
-    background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:26px;
-  }
-  .checklist h3{font-family:var(--font-mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
-  .checklist ul{display:flex;flex-direction:column;gap:12px;}
-  .checklist li{font-size:14px;color:var(--text-muted);padding-left:22px;position:relative;}
-  .checklist li::before{content:'□';position:absolute;left:0;color:var(--green);font-family:var(--font-mono);}
-
-  @media (max-width:880px){.contact-grid{grid-template-columns:1fr;}}
-
-  footer{border-top:1px solid var(--border);padding:28px 0;}
-  .footer-inner{
-    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
-    font-family:var(--font-mono);font-size:12px;color:var(--text-dim);
-  }
+  footer{background:var(--wing-deep);color:var(--on-wing-dim);padding:24px 0;font-size:14px;}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 </style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="topbar__inner">
-    <a href="#home" class="brand">
-      <span class="brand__mark">GT</span>
-      Gerr Denver Teodoro
-    </a>
-    <nav class="nav" id="nav">
+    <a href="#home" class="brand"><span class="brand__mark">GT</span>Gerr Denver Teodoro</a>
+    <nav class="nav" id="nav" aria-label="Main">
       <a href="#about">About</a>
-      <a href="#approach">Approach</a>
-      <a href="#services">Services</a>
+      <a href="#how">How I work</a>
+      <a href="#work">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#reviews">Reviews</a>
       <a href="#credentials">Credentials</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="topbar__right">
-      <div class="status-pill"><span class="dot"></span> AVAILABLE FOR PROJECTS</div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
-    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
   </div>
 </header>
 
@@ -413,532 +316,343 @@
   <!-- ================= HERO ================= -->
   <section id="home" class="hero">
     <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow"><span class="dot"></span> Open to freelance, automation &amp; small business growth work</span>
-        <h1>I find where your operations are quietly losing money — <em>then fix it.</em></h1>
-        <p class="hero__sub">I come from the operations floor of food service and retail businesses, not a boardroom. I help small businesses spot the pain points slowing them down — a lagging POS, an unchecked security gap, a manual report — fix them, and automate what should never have been manual, so the business is ready for its next stage of growth.</p>
+      <div>
+        <p class="hero__open">Open to full-time roles and freelance work</p>
+        <h1>I find the manual work slowing a business down, then build the tool that fixes it.</h1>
+        <p class="hero__sub">Technical Engineer with 3+ years in store IT for restaurant and retail brands. Since July 2026 I work with our Digital Solutions team. I'm a vibe coder: AI helps me write the code, and I own the testing, rollout and docs.</p>
         <div class="hero__cta">
-          <a class="btn btn--primary" href="mailto:teodorogerrdenver@gmail.com?subject=Project%20Inquiry">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="m4 6 8 7 8-7" stroke-linejoin="round"/></svg>
-            Email Me
+          <a class="btn btn--primary" href="mailto:teodorogerrdenver@gmail.com?subject=Hello%20Denver">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v14H4z" stroke-linejoin="round"/><path d="m4 7 8 6 8-6" stroke-linejoin="round"/></svg>
+            Email me
           </a>
-          <a class="btn btn--ghost" href="https://wa.me/639654358663" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12a8 8 0 1 1-3.6-6.7" stroke-linecap="round"/><path d="M20 4v5h-5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 10.5c.3 2 2 3.7 4 4" stroke-linecap="round"/></svg>
-            WhatsApp
-          </a>
-          <a class="btn btn--ghost" href="viber://chat?number=%2B639654358663">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H8l-4 4z" stroke-linejoin="round"/></svg>
-            Viber
-          </a>
+          <a class="btn btn--on-wing" href="#work">See my projects</a>
+          <a class="btn btn--on-wing" href="mailto:teodorogerrdenver@gmail.com?subject=CV%20request">Ask for my CV</a>
         </div>
-        <div class="hero__meta">
-          <span>📍 San Jose Del Monte, Bulacan, PH</span>
-          <span>📞 0965 435 8663</span>
-          <span>✉️ teodorogerrdenver@gmail.com</span>
+        <div class="proof">
+          <div><b>31</b><span>stores run the sales sync agent and VPN watchdog I maintain</span></div>
+          <div><b>262</b><span>stores covered by a tool our engineers use every day</span></div>
+          <div><b>3+</b><span>years fixing POS, CCTV and network problems in stores</span></div>
         </div>
       </div>
 
-      <div class="hero-panel">
-        <div class="console">
-          <div class="console__head">
-            <span><span class="dot" style="animation-duration:2.6s;"></span> OPS-STATUS.LOG</span>
-            <span id="clockLabel">LIVE</span>
+      <aside class="status" aria-label="What I'm working on">
+        <div class="status__head"><span>status.log</span><span id="today">Bulacan, PH</span></div>
+        <div class="status__body">
+          <div class="status__row">
+            <span class="status__label">Days at Table Group</span>
+            <span class="status__value" id="uptimeDays">Since Sept 2024</span>
           </div>
-          <div class="console__body">
-            <div class="console__row">
-              <span class="console__label">Uptime (current role)</span>
-              <span class="console__value green" id="uptimeDays">— days</span>
-            </div>
-            <div class="console__row">
-              <span class="console__label">Current focus</span>
-              <span class="tag-row">
-                <span class="tag">Web App Security</span>
-                <span class="tag">OWASP Top 10</span>
-                <span class="tag">Claude Code Automation</span>
-              </span>
-            </div>
-            <div class="console__row">
-              <span class="console__label">Response time</span>
-              <span class="console__value">Same day, most inquiries</span>
-            </div>
-            <div class="console__row">
-              <span class="console__label">Based in</span>
-              <span class="console__value">Bulacan, Philippines (GMT+8)</span>
-            </div>
+          <div class="status__row">
+            <span class="status__label">Working on now</span>
+            <ul class="status__list">
+              <li>Security awareness drill <span class="chip chip--progress">In progress</span></li>
+              <li>Pulse Grid store monitor <span class="chip chip--progress">In progress</span></li>
+              <li>File Converter pitch <span class="chip chip--progress">Coming up</span></li>
+            </ul>
           </div>
-          <div class="console__ticker">
-            <div class="console__ticker-track">
-              <span>[<span>ACTIVE</span>] Web App Security Assessment Workbook — OWASP Top 10</span>
-              <span>[<span>ACTIVE</span>] Telegram → Claude Code automation bridge</span>
-              <span>[<span>DEPLOYED</span>] POS monitoring concept — Make.com + Sheets</span>
-              <span>[<span>ACTIVE</span>] Web App Security Assessment Workbook — OWASP Top 10</span>
-              <span>[<span>ACTIVE</span>] Telegram → Claude Code automation bridge</span>
-              <span>[<span>DEPLOYED</span>] POS monitoring concept — Make.com + Sheets</span>
-            </div>
+          <div class="status__row">
+            <span class="status__label">Learning</span>
+            <span class="status__value">OWASP Top 10, Claude Code</span>
+          </div>
+          <div class="status__row">
+            <span class="status__label">Reply time</span>
+            <span class="status__value">Same day, most messages</span>
           </div>
         </div>
-      </div>
+      </aside>
     </div>
   </section>
-
-  <div class="divider wrap"></div>
 
   <!-- ================= ABOUT ================= -->
   <section id="about" class="section-pad">
     <div class="wrap about-grid">
-      <div>
-        <span class="eyebrow">About</span>
-        <h2 style="margin:14px 0 18px;">A technical problem-solver moving from store operations into security.</h2>
-        <p>I understand the real-world pressure of store downtime — POS issues, printer problems, network concerns, vendor coordination, and fast incident updates. That hands-on operations background is now the lens I bring to web application security.</p>
-        <p>My day-to-day has shifted from store support toward assessing web applications, both internal tools and pre-launch apps, against the OWASP Top 10. I'm new to the security domain and learning it deliberately on the job, while continuing to build AI automation and reporting workflows with Make.com, Google Sheets, Telegram bots, webhooks, and coding agents like Claude Code.</p>
+      <div class="about-copy">
+        <h2>Years on the store floor taught me where the time goes.</h2>
+        <p>I've supported POS, printers, networks and CCTV for <strong>Nono's, The Coffee Bean &amp; Tea Leaf, Dempsey and The Kitchen by Coffee Bean</strong>, and before that for retail brands like Penshoppe and Oxygn. A slow POS during the lunch rush isn't just a ticket. It's a line of customers waiting.</p>
+        <p>In July 2026 I moved to our <strong>Digital Solutions</strong> team. The job is to find work people still do by hand and replace it with something better. Most of what's on this page started as a problem I saw in stores before anyone asked me to fix it.</p>
+        <p>I don't have a computer science degree. I learn by building, with AI as my pair programmer. I also handle security on my team: I look after the security of our sales sync agent, run approved security awareness drills for staff, and I'm learning to check web apps against the OWASP Top 10.</p>
       </div>
-      <div class="about-stats">
-        <div class="stat"><b>2+ yrs</b><span>IT operations &amp; POS support experience</span></div>
-        <div class="stat"><b>4</b><span>Restaurant &amp; coffee shop brands supported</span></div>
-        <div class="stat"><b>1</b><span>Security assessment workbook shipped, OWASP-grounded</span></div>
-        <div class="stat"><b>Sole</b><span>Security-focused staff member on current team</span></div>
+      <div class="path">
+        <h3>How I got here</h3>
+        <ol>
+          <li><b>POS support, GOLDENABC</b><span>May 2022 to April 2023, retail stores across Luzon</span></li>
+          <li><b>Store IT support, Table Group</b><span>September 2024 to June 2026, restaurants and coffee shops</span></li>
+          <li class="now"><b>Digital Solutions, Table Group</b><span>July 2026 to now, building tools and running security checks</span></li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <div class="divider wrap"></div>
-
-  <!-- ================= APPROACH / INDUSTRIES ================= -->
-  <section id="approach" class="section-pad">
+  <!-- ================= HOW I WORK ================= -->
+  <section id="how" class="section-pad" style="padding-top:0;">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Approach</span>
-        <h2>Most small business problems aren't one big fire.</h2>
-        <p>They're an accumulation of small ones — a POS that lags during the rush, a security gap nobody's had time to check, a report that takes two hours to build by hand.</p>
+        <h2>How I work</h2>
+        <p>The same five steps, whether it's a loyalty report or a store network.</p>
       </div>
-      <p style="color:var(--text-muted);font-size:15.5px;max-width:760px;margin-bottom:36px;">I come from the operations floor of food service and retail businesses, not a boardroom, so I know what those pain points actually look like day to day. I dig into where the friction is, fix what's broken, and build the automation or documentation that keeps it fixed — the groundwork that lets a small business take its next step, whether that's opening a new location, getting security-ready, or just running without daily fires.</p>
-
-      <div class="card-grid">
-        <div class="svc-card">
-          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v4M12 3v4M16 3v4"/><path d="M5 8h11v6a5.5 5.5 0 0 1-5.5 5.5A5.5 5.5 0 0 1 5 14V8z"/><path d="M16 10h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1"/></svg></div>
-          <h3>Food &amp; Beverage Operations</h3>
-          <p>Two years inside restaurant and coffee shop operations — Nono's, The Coffee Bean &amp; Tea Leaf, Dempsey, and The Kitchen by Coffee Bean, under The Table Group. I've seen how a POS lag during rush or a stalled printer doesn't just create a ticket — it slows the line and hits customers in real time.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4h6l1 2 4 1-2 5-3-1v9H5v-9l-3 1-2-5 4-1 1-2z"/></svg></div>
-          <h3>Retail &amp; Apparel Operations</h3>
-          <p>Supported POS across multiple retail and apparel brands — PENSHOPPE, OXYGN, REGATTA, FORME, MEMO, and BOCU — under GOLDENABC, Inc. That built a feel for multi-store coordination, seasonal sales spikes, stock-sync issues, and rolling out upgrades across many locations without disrupting the sales floor.</p>
-        </div>
-      </div>
+      <ol class="steps">
+        <li><span class="steps__n">1</span><div><h3>Spot the pain</h3><p>Watch where people retype, wait, or guess. Store visits are where I find most of it.</p></div></li>
+        <li><span class="steps__n">2</span><div><h3>Measure it</h3><p>How many stores, how many hours, how often it goes wrong. Numbers decide what to fix first.</p></div></li>
+        <li><span class="steps__n">3</span><div><h3>Build with AI</h3><p>AI writes code with me. I decide the design, the rules, and what must never break.</p></div></li>
+        <li><span class="steps__n">4</span><div><h3>Test with real users</h3><p>The people who'll use it try it first. Their complaints become the next version.</p></div></li>
+        <li><span class="steps__n">5</span><div><h3>Pitch and roll out</h3><p>Show the before and after, package it as one file, and write the guide.</p></div></li>
+      </ol>
     </div>
   </section>
 
-  <div class="divider wrap"></div>
-
-  <!-- ================= SERVICES ================= -->
-  <section id="services" class="section-pad">
+  <!-- ================= FEATURED ================= -->
+  <section id="work" class="featured section-pad">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Services</span>
-        <h2>What I can do for clients and companies</h2>
-        <p>Services based on my IT operations, POS support, security assessment, CCTV/NVR, and automation background.</p>
+        <h2>Tools people use every day</h2>
+        <p>Three of my projects that run at work right now.</p>
+        <p class="note">Pictures are illustrations, not screenshots. The real apps look different, but these show how they work. All data shown is made up.</p>
       </div>
-      <div class="card-grid">
-        <div class="svc-card svc-card--new">
-          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <h3>Web App Security Assessment</h3>
-          <p>OWASP-Top-10-based assessments for in-use tools and pre-launch apps, covering auth, session handling, input validation, and access control, with clear write-ups for non-specialist stakeholders.</p>
+
+      <article class="feature">
+        <img src="assets/projects/main.png" width="1200" height="750" alt="Illustration of the sync agent: a POS terminal sends sales through the agent and an encrypted link to one cloud database, with a sample sync log." loading="lazy">
+        <div>
+          <span class="chip chip--use">In use in 31 stores</span>
+          <h3>POS sales sync agent</h3>
+          <p>Every store's sales sat on its own POS terminal. Head office needed them in one place for reports.</p>
+          <p><b>My part:</b> I'm a collaborator on the company's sync agent, and since its original developer left, I maintain it. I handle its security, including a review that found 11 new issues, and I monitor it so it stays online. I also wrote the store troubleshooting guide and built about 30 SQL reports and data checks on top.</p>
+          <div class="stack"><span>Python</span><span>Azure SQL</span><span>SQLite</span><span>T-SQL</span></div>
         </div>
-        <div class="svc-card">
-          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/></svg></div>
-          <h3>IT Operations Support</h3>
-          <p>Support for daily store IT operations, workstation issues, software concerns, peripherals, preventive checks, and incident documentation.</p>
+      </article>
+
+      <article class="feature">
+        <img src="assets/projects/watchdog.png" width="1200" height="750" alt="Illustration of the VPN watchdog: a log showing three failed checks, an automatic VPN reconnect, and a calm message for store staff." loading="lazy">
+        <div>
+          <span class="chip chip--use">My idea, in all 31 stores</span>
+          <h3>VPN watchdog</h3>
+          <p>When a store's VPN dropped, sales stopped syncing until someone noticed. Store staff can't be asked to fix it.</p>
+          <p><b>What it does:</b> checks the connection, reconnects the VPN by itself after three failed checks, and keeps exactly one sync agent running. Staff only see a message when they need to act.</p>
+          <div class="stack"><span>Python</span><span>pywinauto</span><span>PowerShell</span></div>
         </div>
-        <div class="svc-card">
-          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h9l3 3v13H6z"/><path d="M15 4v3h3M9 13h6M9 17h4"/></svg></div>
-          <h3>POS Technical Support</h3>
-          <p>Troubleshooting for POS systems, printers, network concerns, user access issues, POS upgrades, refresh projects, and new store setup.</p>
+      </article>
+
+      <article class="feature">
+        <img src="assets/projects/swirl.png" width="1200" height="750" alt="Illustration of the Swirl Points Tool: a messy raw loyalty report above a clean table where each line is marked ready or flagged." loading="lazy">
+        <div>
+          <span class="chip chip--use">Used by our tech engineers</span>
+          <h3>Swirl Points Tool</h3>
+          <p>Loyalty reports from stores arrive messy, and engineers retyped them by hand into a fixed email format.</p>
+          <p><b>What it does:</b> checks every line for card, amount and duplicate receipts, asks for approval on the doubtful ones, and exports a clean Excel file. All 262 stores are built in.</p>
+          <div class="stack"><span>Python</span><span>PyQt6</span><span>Excel export</span></div>
         </div>
-        <div class="svc-card">
-          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17V7l8-4 8 4v10l-8 4-8-4z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg></div>
-          <h3>AI Automation Workflows</h3>
-          <p>Workflow design using Make.com, Google Sheets, webhooks, Telegram bots, coding agents, and AI tools for monitoring and reporting.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M4 12h3M17 12h3M12 4v3M12 17v3M6.3 6.3l2.1 2.1M15.6 15.6l2.1 2.1M6.3 17.7l2.1-2.1M15.6 8.4l2.1-2.1"/></svg></div>
-          <h3>CCTV / NVR Support</h3>
-          <p>CCTV/NVR troubleshooting concepts, event monitoring, camera offline tracking, HDD alerts, network alerts, and documentation workflows.</p>
-        </div>
-      </div>
+      </article>
     </div>
   </section>
 
-  <div class="divider wrap"></div>
-
-  <!-- ================= SKILLS / COMPETENCIES ================= -->
-  <section id="skills" class="section-pad">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Skills</span>
-        <h2>Technical skills, tools, and core competencies</h2>
-        <p>Grouped so it's easy for HR, clients, and hiring managers to scan.</p>
-      </div>
-
-      <div class="chip-row" style="margin-bottom:32px;">
-        <span class="chip">IT Operations Support</span>
-        <span class="chip">POS Technical Support</span>
-        <span class="chip">Web App Security Assessment</span>
-        <span class="chip">Incident &amp; Ticket Handling</span>
-        <span class="chip">AI Automation Workflows</span>
-        <span class="chip">Dashboard &amp; Reporting</span>
-        <span class="chip">Hardware/Software Troubleshooting</span>
-        <span class="chip">CCTV/NVR Troubleshooting</span>
-        <span class="chip">Vendor/Store Communication</span>
-        <span class="chip">New Store IT Setup</span>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-block">
-          <h3>Security &amp; Assessment</h3>
-          <p>OWASP Top 10 methodology, web app security assessments, risk rating &amp; documentation, passive security scanning (React-based tooling).</p>
-        </div>
-        <div class="skill-block">
-          <h3>AI &amp; Automation</h3>
-          <p>Make.com, Google Sheets automation, webhooks, Telegram bot workflows, Claude Code / agentic AI tools, PowerShell concepts, OpenAI/Gemini experimentation.</p>
-        </div>
-        <div class="skill-block">
-          <h3>Systems &amp; Tools</h3>
-          <p>SQL Server Management Studio, Microsoft Office, ticketing systems, remote access software.</p>
-        </div>
-        <div class="skill-block">
-          <h3>POS &amp; Store Support</h3>
-          <p>POS troubleshooting, POS upgrades, store IT support, printer/peripheral support, new store setup.</p>
-        </div>
-        <div class="skill-block">
-          <h3>Network &amp; CCTV</h3>
-          <p>Basic network troubleshooting, CCTV/NVR troubleshooting, connectivity checks, event/alert monitoring concepts.</p>
-        </div>
-        <div class="skill-block">
-          <h3>Documentation &amp; Reporting</h3>
-          <p>Incident updates, technical reports, user training, email support, dashboard/reporting concepts.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider wrap"></div>
-
-  <!-- ================= EXPERIENCE ================= -->
-  <section id="experience" class="section-pad">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Experience</span>
-        <h2>Professional experience</h2>
-        <p>Built from hands-on support roles in restaurant, coffee shop, and retail environments — now expanding into security.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="tl-item">
-          <span class="tl-item__date">September 2024 — Present</span>
-          <span class="tl-item__tag">Restaurant &amp; coffee shop operations · Security assessment</span>
-          <h3>Technical Engineer — The Table Group, Inc.</h3>
-          <ul>
-            <li>Provide onsite and remote IT support for restaurant and coffee shop operations, including Nono's, The Coffee Bean &amp; Tea Leaf, Dempsey, and The Kitchen by Coffee Bean.</li>
-            <li>Recently expanded scope to web application security assessments, serving as the team's sole security-focused staff member for in-use and pre-launch apps.</li>
-            <li>Built an OWASP-Top-10-based, multi-tab security assessment workbook to standardize how risk is scored and documented.</li>
-            <li>Troubleshoot POS, workstation, printer, network, software, and peripheral issues to minimize store downtime.</li>
-            <li>Coordinate with store teams, vendors, and internal stakeholders to document incidents, provide updates, and follow through until resolved.</li>
-            <li>Identify opportunities to improve support processes through monitoring, reporting, documentation, and automation.</li>
-          </ul>
-        </div>
-
-        <div class="tl-item">
-          <span class="tl-item__date">May 2022 — April 2023</span>
-          <span class="tl-item__tag">Retail POS support across Luzon</span>
-          <h3>IT Staff / Technical Support Engineer — GOLDENABC, Inc.</h3>
-          <ul>
-            <li>Delivered remote and onsite POS technical support for retail store operations across Luzon.</li>
-            <li>Supported multiple brands including PENSHOPPE, OXYGN, REGATTA, FORME, MEMO, and BOCU stores.</li>
-            <li>Troubleshot POS hardware, software, printer, network, and user access issues through phone, email, remote tools, and onsite support.</li>
-            <li>Handled support tickets, incident updates, service requests, and escalations while working toward SLA compliance.</li>
-            <li>Assisted with POS refresh and upgrade projects, store coordination, system checks, deployment support, and user training.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider wrap"></div>
-
-  <!-- ================= PROJECTS ================= -->
+  <!-- ================= PROJECT LOG ================= -->
   <section id="projects" class="section-pad">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Projects</span>
-        <h2>Security, automation &amp; support project examples</h2>
-        <p>Logged the way I'd log them internally — ticket ID, status, and stack — to keep this scannable for HR, clients, and fellow builders.</p>
+        <h2>Everything else I've built</h2>
+        <p>Every project says honestly where it stands: in use, in progress, tested, or still an idea.</p>
       </div>
 
-      <div class="filter-row" id="filterRow">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="security">Security</button>
-        <button class="filter-btn" data-filter="automation">Automation</button>
-        <button class="filter-btn" data-filter="ops">IT Ops / POS</button>
+      <div class="filter-row" role="group" aria-label="Filter projects">
+        <button class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="security" aria-pressed="false">Security</button>
+        <button class="filter-btn" data-filter="automation" aria-pressed="false">Automation</button>
+        <button class="filter-btn" data-filter="ops" aria-pressed="false">Store IT</button>
       </div>
 
-      <div class="proj-grid" id="projGrid">
-
-        <article class="proj-card" data-cat="security">
-          <div class="proj-card__top">
-            <span class="proj-id">#SEC-001</span>
-            <span class="status-tag active">Active</span>
+      <div class="log" id="log">
+        <article class="entry" data-cat="security">
+          <img src="assets/projects/awareness.png" width="1200" height="750" alt="Illustration of the awareness drill: a link, QR code or file leads to a page saying it was a practice drill and signing the person up for a seminar." loading="lazy">
+          <div class="entry__body">
+            <div class="entry__top"><span class="entry__id">#SEC-003</span><span class="chip chip--progress">Approved, in progress</span></div>
+            <h3>Security awareness drill</h3>
+            <p>An approved drill with harmless links, QR codes and files. Opening one shows a short lesson and signs the person up for our security seminar. No data is taken.</p>
+            <div class="stack"><span>Awareness training</span><span>Management approved</span></div>
           </div>
-          <span class="proj-card__cat">Security</span>
-          <h3>Web Application Security Assessment Workbook</h3>
-          <p>A multi-tab assessment workbook grounded in the OWASP Top 10, covering authentication, session handling, input validation, and access control for internal tools and pre-launch apps.</p>
-          <div class="stack-row">
-            <span class="stack-tag">OWASP Top 10</span>
-            <span class="stack-tag">Risk Rating</span>
-            <span class="stack-tag">Google Sheets</span>
-          </div>
-          <p class="proj-value"><b>Business value:</b> Gives a small team without dedicated security staff a repeatable way to score and prioritize web app risk before launch.</p>
         </article>
 
-        <article class="proj-card" data-cat="security">
-          <div class="proj-card__top">
-            <span class="proj-id">#SEC-002</span>
-            <span class="status-tag active">In progress</span>
+        <article class="entry" data-cat="ops">
+          <img src="assets/projects/pulsegrid.png" width="1200" height="750" alt="Illustration of the Pulse Grid dashboard: a grid of stores with online, recorder offline and hard drive warnings." loading="lazy">
+          <div class="entry__body">
+            <div class="entry__top"><span class="entry__id">#OPS-020</span><span class="chip chip--progress">In progress</span></div>
+            <h3>Pulse Grid store monitor</h3>
+            <p>One screen for every store's CCTV recorders, POS health, printers and internet. Store managers see only their own branches. Our director gets regular updates on it.</p>
+            <div class="stack"><span>PHP</span><span>MySQL</span><span>Python</span><span>FastAPI</span></div>
           </div>
-          <span class="proj-card__cat">Security</span>
-          <h3>Passive Security Checker (React)</h3>
-          <p>A React-based tool that passively inspects a web app's security headers, cookie flags, and exposed metadata — no active exploitation — to speed up first-pass assessments.</p>
-          <div class="stack-row">
-            <span class="stack-tag">React</span>
-            <span class="stack-tag">Security Headers</span>
-            <span class="stack-tag">Passive Scanning</span>
-          </div>
-          <p class="proj-value"><b>Business value:</b> Cuts manual header-by-header review time before a full assessment starts.</p>
         </article>
 
-        <article class="proj-card" data-cat="automation">
-          <div class="proj-card__top">
-            <span class="proj-id">#AUT-025</span>
-            <span class="status-tag active">Active</span>
+        <article class="entry" data-cat="automation">
+          <img src="assets/projects/converter.png" width="1200" height="750" alt="Illustration of the File Converter: three files waiting to convert, with a note that it works with no internet." loading="lazy">
+          <div class="entry__body">
+            <div class="entry__top"><span class="entry__id">#AUT-031</span><span class="chip chip--progress">Pitching soon</span></div>
+            <h3>Offline File Converter</h3>
+            <p>People were uploading company files to free converter websites. This does the same conversions on the computer itself, so nothing leaves the machine.</p>
+            <div class="stack"><span>Python</span><span>PyQt6</span><span>LibreOffice</span></div>
           </div>
-          <span class="proj-card__cat">Automation</span>
-          <h3>Telegram → Claude Code Bridge</h3>
-          <p>A Python bridge connecting a Telegram bot to Claude Code, with session persistence, .env-based credential handling, and access scoped to a single Telegram user ID — lets me delegate coding and IT tasks from my phone.</p>
-          <div class="stack-row">
-            <span class="stack-tag">Python</span>
-            <span class="stack-tag">python-telegram-bot</span>
-            <span class="stack-tag">Claude Code</span>
-          </div>
-          <p class="proj-value"><b>Business value:</b> Working proof-of-concept for agentic AI workflows, applicable to internal support tooling.</p>
         </article>
 
-        <article class="proj-card" data-cat="automation">
-          <div class="proj-card__top">
-            <span class="proj-id">#AUT-027</span>
-            <span class="status-tag active">In progress</span>
+        <article class="entry" data-cat="automation">
+          <img src="assets/projects/expense.png" width="1200" height="750" alt="Illustration of the expense logger: a Telegram chat where a receipt is logged as a meal, next to the reimbursement sheet." loading="lazy">
+          <div class="entry__body">
+            <div class="entry__top"><span class="entry__id">#AUT-018</span><span class="chip chip--tested">Tested with coworkers</span></div>
+            <h3>Travel expense logger</h3>
+            <p>Field engineers filed reimbursement weeks late, from memory. Send a receipt or a short note to a Telegram bot, and AI fills the reimbursement sheet the same day.</p>
+            <div class="stack"><span>Make.com</span><span>Telegram</span><span>OpenAI</span><span>Google Sheets</span></div>
           </div>
-          <span class="proj-card__cat">Automation</span>
-          <h3>Jarvis-Style Personal AI Assistant</h3>
-          <p>A Telegram-controlled personal assistant concept for reminders, quick lookups, and command execution — an early step toward broader agentic AI tooling for support work.</p>
-          <div class="stack-row">
-            <span class="stack-tag">Telegram Bot API</span>
-            <span class="stack-tag">Python</span>
-            <span class="stack-tag">Agent Design</span>
-          </div>
-          <p class="proj-value"><b>Business value:</b> Personal R&amp;D project — testing patterns for agent-assisted daily operations.</p>
         </article>
 
-        <article class="proj-card" data-cat="ops">
-          <div class="proj-card__top">
-            <span class="proj-id">#OPS-014</span>
-            <span class="status-tag deployed">Deployed (concept)</span>
+        <article class="entry" data-cat="automation">
+          <img src="assets/projects/ledgerpoint.png" width="1200" height="750" alt="Illustration of LedgerPoint: a cashier counts the drawer without seeing the expected total, and head office sees a short of 120 pesos." loading="lazy">
+          <div class="entry__body">
+            <div class="entry__top"><span class="entry__id">#BIZ-001</span><span class="chip chip--idea">Weekend project</span></div>
+            <h3>LedgerPoint</h3>
+            <p>A web app idea for restaurant chains: cashiers count the drawer without seeing the expected total, and Grab and Foodpanda payouts get checked against orders. Plan and prototype done.</p>
+            <div class="stack"><span>Laravel</span><span>React</span><span>Prototype</span></div>
           </div>
-          <span class="proj-card__cat">IT Ops / POS</span>
-          <h3>PowerShell-Based POS Monitoring Concept</h3>
-          <p>A monitoring concept for POS devices that collects internet status, speed test results, device health signals, and heartbeat updates across multiple store locations.</p>
-          <div class="stack-row">
-            <span class="stack-tag">PowerShell</span>
-            <span class="stack-tag">Make.com</span>
-            <span class="stack-tag">Google Sheets</span>
-            <span class="stack-tag">Telegram Bot</span>
-          </div>
-          <p class="proj-value"><b>Business value:</b> Improves visibility of store connectivity so IT can respond faster to downtime or abnormal behavior.</p>
         </article>
 
-        <article class="proj-card" data-cat="ops">
-          <div class="proj-card__top">
-            <span class="proj-id">#OPS-009</span>
-            <span class="status-tag deployed">Deployed (concept)</span>
-          </div>
-          <span class="proj-card__cat">IT Ops / POS</span>
-          <h3>CCTV/NVR Event Monitoring Workflow</h3>
-          <p>A workflow concept for tracking camera offline alerts, HDD issues, network alerts, and illegal login attempts through email parsing or API-based extraction.</p>
-          <div class="stack-row">
-            <span class="stack-tag">Hikvision</span>
-            <span class="stack-tag">Gmail Parsing</span>
-            <span class="stack-tag">Make.com</span>
-          </div>
-          <p class="proj-value"><b>Business value:</b> Reduces missed CCTV alerts and gives operations teams a clearer incident record.</p>
-        </article>
 
-        <article class="proj-card" data-cat="automation">
-          <div class="proj-card__top">
-            <span class="proj-id">#AUT-021</span>
-            <span class="status-tag deployed">Deployed (concept)</span>
-          </div>
-          <span class="proj-card__cat">Automation</span>
-          <h3>AI-Assisted Ticket Analytics Dashboard</h3>
-          <p>A dashboard concept for analyzing ticket exports, incident trends, service requests, requester patterns, aging concerns, and common issue categories.</p>
-          <div class="stack-row">
-            <span class="stack-tag">Ticketing Data</span>
-            <span class="stack-tag">Looker Studio</span>
-            <span class="stack-tag">AI Analysis</span>
-          </div>
-          <p class="proj-value"><b>Business value:</b> Supports data-driven IT operations and helps leaders see where support processes can improve.</p>
-        </article>
+      </div>
+      <p class="log-note">Pictures are illustrations with made-up data, not screenshots of the real apps.</p>
+    </div>
+  </section>
 
-        <article class="proj-card" data-cat="automation">
-          <div class="proj-card__top">
-            <span class="proj-id">#AUT-018</span>
-            <span class="status-tag deployed">Deployed (concept)</span>
-          </div>
-          <span class="proj-card__cat">Automation</span>
-          <h3>Telegram Expense &amp; Reimbursement Parser</h3>
-          <p>A workflow that converts natural-language travel or reimbursement messages into structured Google Sheets records using AI parsing and Make.com automation.</p>
-          <div class="stack-row">
-            <span class="stack-tag">Telegram</span>
-            <span class="stack-tag">OpenAI/Gemini</span>
-            <span class="stack-tag">Make.com</span>
-          </div>
-          <p class="proj-value"><b>Business value:</b> Reduces manual encoding and standardizes expense entries for easier reimbursement tracking.</p>
-        </article>
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="section-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Skills and tools</h2>
+        <p>What I use, grouped so it's quick to scan.</p>
+      </div>
+      <div class="skills">
+        <div><h3>AI and automation</h3><p>Claude Code, OpenAI, Gemini, Make.com, webhooks, Telegram bots, Google Sheets automation.</p></div>
+        <div><h3>Building, with AI</h3><p>Python desktop apps (PyQt6), SQL on SQL Server, Azure SQL, MySQL and SQLite, PHP, PowerShell, Git and GitHub.</p></div>
+        <div><h3>Security</h3><p>Security reviews and findings logs, approved awareness drills, OWASP Top 10 (learning), password hashing, signed updates, HTTPS everywhere, role-based access.</p></div>
+        <div><h3>Store IT</h3><p>POS troubleshooting and upgrades, printers and peripherals, new store setup, basic networking, VPN, CCTV and NVR.</p></div>
+        <div><h3>Writing it down</h3><p>Runbooks, user guides, incident updates, security findings, changelogs.</p></div>
+        <div><h3>Working with people</h3><p>Store teams, vendors and managers, end-user training, pitching tools to management.</p></div>
+      </div>
 
+      <div class="section-head" style="margin:64px 0 24px;">
+        <h2>What I can help with</h2>
+        <p>For companies hiring, and for small businesses that need a hand.</p>
+      </div>
+      <div class="help">
+        <div><h3>Automating manual work</h3><p>Reports, data entry and checks that people still do by hand, turned into a tool or a workflow.</p></div>
+        <div><h3>Security basics</h3><p>Security reviews of internal tools, safer settings, and awareness training for staff.</p></div>
+        <div><h3>Store IT and POS</h3><p>POS, printers, network and CCTV problems, upgrades and new store setup.</p></div>
+        <div><h3>Monitoring and alerts</h3><p>Know a store is down before the store calls you.</p></div>
       </div>
     </div>
   </section>
 
-  <div class="divider wrap"></div>
-
-  <!-- ================= CREDENTIALS ================= -->
-  <section id="credentials" class="section-pad">
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience" class="section-pad" style="padding-top:0;">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Credentials</span>
-        <h2>Education, training, and leadership</h2>
-        <p>Adds credibility beyond work experience and shows continuous learning.</p>
+        <h2>Experience</h2>
       </div>
 
-      <div class="cred-grid">
-        <div class="cred-card">
-          <h3>Education</h3>
-          <div class="deg"><b>BS Information Technology</b><span>Bestlink College of the Philippines · 2019–2021</span></div>
-          <div class="deg"><b>BS Information Technology</b><span>First City Providential College · 2017–2018</span></div>
-        </div>
-        <div class="cred-card">
-          <h3>Certifications &amp; Training</h3>
+      <div class="job">
+        <span class="job__when">September 2024 to now</span>
+        <div>
+          <h3>Technical Engineer</h3>
+          <span class="job__org">Table Group, Inc.</span>
+
+          <h4>IT Business Solutions, Digital Solutions team <span>July 2026 to now</span></h4>
           <ul>
-            <li>TESDA — Computer Systems Servicing Training</li>
-            <li>Installation and configuration of computer systems</li>
-            <li>Introduction to Computer Systems Servicing (CSS)</li>
-            <li>Setup of computer servers and networks</li>
-            <li>Maintenance of computer systems and networks</li>
+            <li>Find manual processes across the company and replace them with digital tools.</li>
+            <li>Collaborator on the POS sales sync agent running in 31 stores. Since its original developer left, I maintain it, handle its security (a review found 11 new issues, 2 critical), and monitor it so it stays online. Also wrote its troubleshooting guide and about 30 SQL reports and data checks.</li>
+            <li>Built a VPN watchdog that reconnects store VPNs and keeps the sync agent running without staff help.</li>
+            <li>Built the Swirl Points Tool, now used daily by tech engineers, and an offline file converter I'm pitching to the company.</li>
+            <li>Handle security on the team: the sync agent's security, approved security awareness drills for staff, and learning to check web apps against the OWASP Top 10.</li>
+          </ul>
+
+          <h4>Store IT support <span>September 2024 to June 2026</span></h4>
+          <ul>
+            <li>Onsite and remote IT support for Nono's, The Coffee Bean &amp; Tea Leaf, Dempsey and The Kitchen by Coffee Bean.</li>
+            <li>Fixed POS, workstation, printer, network and software problems to keep stores running.</li>
+            <li>Supported POS upgrades, preventive maintenance and IT setup for new stores.</li>
+            <li>Built a Telegram and AI expense logger so field engineers could record costs on the day.</li>
           </ul>
         </div>
-        <div class="cred-card">
+      </div>
+
+      <div class="job">
+        <span class="job__when">May 2022 to April 2023</span>
+        <div>
+          <h3>IT Staff and Technical Support Engineer</h3>
+          <span class="job__org">GOLDENABC, Inc.</span>
+          <ul>
+            <li>Remote and onsite POS support for retail stores across Luzon: Penshoppe, Oxygn, Regatta, Forme, Memo and Bocu.</li>
+            <li>Handled tickets, incident updates and escalations, working to SLA targets.</li>
+            <li>Helped with POS refresh and upgrade projects, from store coordination to user training.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CREDENTIALS + REVIEWS ================= -->
+  <section id="credentials" class="section-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Education and training</h2>
+      </div>
+      <div class="creds">
+        <div class="cred">
+          <h3>Education</h3>
+          <div class="deg"><b>BS Information Technology</b><span>Bestlink College of the Philippines, 2019 to 2021</span></div>
+          <div class="deg"><b>BS Information Technology</b><span>First City Providential College, 2017 to 2018</span></div>
+        </div>
+        <div class="cred">
+          <h3>Training</h3>
+          <ul>
+            <li>TESDA Computer Systems Servicing</li>
+            <li>Installing and setting up computer systems</li>
+            <li>Setting up servers and networks</li>
+            <li>Maintaining computer systems and networks</li>
+          </ul>
+        </div>
+        <div class="cred">
           <h3>Leadership</h3>
           <ul>
-            <li>Vice President, Homeowners' Youth Organization (2019–2020)</li>
-            <li>Supported community development and youth engagement initiatives</li>
-            <li>Continuous learner — business, security, and AI automation</li>
+            <li>Vice President, Homeowners' Youth Organization, 2019 to 2020</li>
+            <li>Community and youth programs</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
 
-  <div class="divider wrap"></div>
-
-  <!-- ================= REVIEWS (honest empty state) ================= -->
-  <section id="reviews" class="section-pad">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Reviews</span>
-        <h2>No client reviews yet — I'd rather show that than fake it.</h2>
-        <p>I haven't taken on freelance or VA clients before. Instead of filling this space with placeholder quotes, I'm leaving it honest.</p>
-      </div>
-
-      <div class="console" style="max-width:680px;">
-        <div class="console__head">
-          <span><span class="dot" style="background:var(--amber);animation:none;box-shadow:none;"></span> REVIEWS.LOG</span>
-          <span class="status-tag active">Queue empty</span>
-        </div>
-        <div class="console__body">
-          <p style="color:var(--text-muted);font-size:14.5px;line-height:1.75;margin-bottom:18px;">
-            What I can show you instead: real operational experience inside food service and retail businesses (above), and working projects I've already built and can walk you through (below). Give me a real problem, a fair shot, and honest feedback — and I'll earn the first entry here.
-          </p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <a class="btn btn--primary" href="#projects">See What I've Built</a>
-            <a class="btn btn--ghost" href="mailto:teodorogerrdenver@gmail.com?subject=Give%20Me%20a%20Shot" aria-label="Email to give me a shot">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="m4 6 8 7 8-7" stroke-linejoin="round"/></svg>
-              Give Me a Shot
-            </a>
-            <a class="btn btn--ghost" href="https://wa.me/639654358663?text=Hi%20Denver%2C%20I%27d%20like%20to%20give%20you%20a%20shot%20on%20a%20project." target="_blank" rel="noopener" aria-label="WhatsApp to give me a shot">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12a8 8 0 1 1-3.6-6.7" stroke-linecap="round"/><path d="M20 4v5h-5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 10.5c.3 2 2 3.7 4 4" stroke-linecap="round"/></svg>
-              WhatsApp
-            </a>
-            <a class="btn btn--ghost" href="viber://chat?number=%2B639654358663" aria-label="Viber to give me a shot">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H8l-4 4z" stroke-linejoin="round"/></svg>
-              Viber
-            </a>
-          </div>
+      <div id="reviews" class="reviews" style="margin-top:48px;">
+        <h3>No client reviews yet. I'd rather show that than fake it.</h3>
+        <p>I haven't done freelance work before, so there's nothing to quote here. What I can show you is real work that's running in stores today. Give me a real problem and honest feedback, and I'll earn the first review.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="mailto:teodorogerrdenver@gmail.com?subject=A%20project%20for%20you">Send me a problem</a>
+          <a class="btn btn--plain" href="#work">See my projects</a>
         </div>
       </div>
     </div>
   </section>
-
-  <div class="divider wrap"></div>
 
   <!-- ================= CONTACT ================= -->
-  <section id="contact" class="section-pad">
+  <section id="contact" class="contact section-pad">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Contact</span>
-        <h2>Let's improve your IT support, security posture, or automation workflow.</h2>
-        <p>Reach out directly — every option below opens straight to the app, no forms to fill out.</p>
+        <h2>Let's talk</h2>
+        <p>Every option opens straight in the app. No forms.</p>
       </div>
-
       <div class="contact-grid">
-        <a class="contact-card" href="mailto:teodorogerrdenver@gmail.com?subject=Project%20Inquiry">
-          <span class="contact-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="m4 6 8 7 8-7" stroke-linejoin="round"/></svg></span>
-          <span class="contact-card__body"><b>Email</b><span>teodorogerrdenver@gmail.com</span></span>
-          <span class="contact-card__go">→</span>
-        </a>
-
-        <a class="contact-card" href="https://wa.me/639654358663" target="_blank" rel="noopener">
-          <span class="contact-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12a8 8 0 1 1-3.6-6.7" stroke-linecap="round"/><path d="M20 4v5h-5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 10.5c.3 2 2 3.7 4 4" stroke-linecap="round"/></svg></span>
-          <span class="contact-card__body"><b>WhatsApp</b><span>+63 965 435 8663</span></span>
-          <span class="contact-card__go">→</span>
-        </a>
-
-        <a class="contact-card" href="viber://chat?number=%2B639654358663">
-          <span class="contact-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H8l-4 4z" stroke-linejoin="round"/></svg></span>
-          <span class="contact-card__body"><b>Viber</b><span>+63 965 435 8663</span></span>
-          <span class="contact-card__go">→</span>
-        </a>
-
-        <a class="contact-card" href="tel:+639654358663">
-          <span class="contact-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h4l2 5-3 2c1 2.5 3.5 5 6 6l2-3 5 2v4c0 1-1 2-2 2-8 0-16-8-16-16 0-1 1-2 2-2z" stroke-linejoin="round"/></svg></span>
-          <span class="contact-card__body"><b>Call</b><span>0965 435 8663</span></span>
-          <span class="contact-card__go">→</span>
-        </a>
+        <a class="contact-card" href="mailto:teodorogerrdenver@gmail.com?subject=Hello%20Denver"><b>Email</b><span>teodorogerrdenver@gmail.com</span></a>
+        <a class="contact-card" href="https://wa.me/639476267270" target="_blank" rel="noopener"><b>WhatsApp</b><span>+63 947 626 7270</span></a>
+        <a class="contact-card" href="viber://chat?number=%2B639476267270"><b>Viber</b><span>+63 947 626 7270</span></a>
+        <a class="contact-card" href="tel:+639476267270"><b>Call</b><span>0947 626 7270</span></a>
       </div>
-
-      <div class="checklist">
-        <h3>Project inquiry checklist</h3>
+      <div class="ask">
+        <h3>If you have a project, it helps to tell me</h3>
         <ul>
-          <li>What store, team, or business process needs improvement?</li>
-          <li>What tools are currently being used?</li>
-          <li>Do you need support, security assessment, automation, monitoring, or documentation?</li>
-          <li>What is the target deadline and expected output?</li>
+          <li>What work is slow, manual, or keeps going wrong</li>
+          <li>What tools your team uses now</li>
+          <li>Whether you need a tool, a security check, monitoring, or support</li>
+          <li>When you need it</li>
         </ul>
       </div>
     </div>
@@ -948,8 +662,8 @@
 
 <footer>
   <div class="wrap footer-inner">
-    <span>© 2026 Gerr Denver Teodoro. Built for freelance, HR, and client opportunities.</span>
-    <span>San Jose Del Monte, Bulacan, PH · GMT+8</span>
+    <span>© 2026 Gerr Denver Teodoro</span>
+    <span>San Jose Del Monte, Bulacan, Philippines (GMT+8)</span>
   </div>
 </footer>
 
@@ -960,34 +674,31 @@
   navToggle.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
   });
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     nav.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open menu');
   }));
 
-  // uptime counter — days since role start (Sept 1, 2024)
+  // days at Table Group, counted from the role start (Sept 1, 2024)
   (function () {
     const start = new Date('2024-09-01T00:00:00');
-    const now = new Date();
-    const days = Math.max(0, Math.floor((now - start) / (1000 * 60 * 60 * 24)));
+    const days = Math.max(0, Math.floor((new Date() - start) / 86400000));
     document.getElementById('uptimeDays').textContent = days.toLocaleString() + ' days';
   })();
 
   // project filter
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const projCards = document.querySelectorAll('.proj-card');
+  const entries = document.querySelectorAll('.entry');
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      filterBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
       const filter = btn.dataset.filter;
-      projCards.forEach(card => {
-        if (filter === 'all' || card.dataset.cat === filter) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
+      entries.forEach(entry => {
+        entry.hidden = !(filter === 'all' || entry.dataset.cat === filter);
       });
     });
   });
