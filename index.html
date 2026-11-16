@@ -167,7 +167,7 @@
       radial-gradient(900px 480px at 88% -10%, rgba(42,157,181,.38), transparent 62%),
       linear-gradient(180deg, var(--wing) 0%, #0D4460 100%);
     padding:clamp(52px,7vw,92px) 0 0;
-    overflow:hidden;
+    display:flow-root; /* keeps the stats strip's negative margin inside, so it overlaps the next section */
   }
   /* faint store grid, fades out toward the text */
   .hero::before{
